@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --font-noto-sans-tc: "Noto Sans TC";
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 錨點跳轉時，留出固定導覽列的高度 */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+}
+
+/* 像素方塊主視覺底紋（麥塊風格點綴，克制不卡通） */
+.pixel-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
