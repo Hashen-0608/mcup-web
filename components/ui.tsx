@@ -43,12 +43,15 @@ export function LinkButton({
   variant = "primary",
   pendingLabel,
   className = "",
+  download,
 }: {
   href: string;
   children: React.ReactNode;
   variant?: ButtonVariant;
   pendingLabel?: string;
   className?: string;
+  /** 傳入檔名即為下載連結；使用者存檔時會看到這個名字 */
+  download?: string;
 }) {
   const base =
     "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-bold shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2";
@@ -67,6 +70,13 @@ export function LinkButton({
 
   const isExternal = href.startsWith("http");
   const cls = `${base} ${variantClass[variant]} ${className}`;
+  if (download) {
+    return (
+      <a href={href} download={download} className={cls}>
+        {children}
+      </a>
+    );
+  }
   if (isExternal) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
