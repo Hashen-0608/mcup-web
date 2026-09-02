@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description: site.seoDescription,
   keywords: ["麥塊盃", "Minecraft 教育版", "運算思維", "創意大賽", "程式教育", "生物多樣性", "台灣"],
   alternates: { canonical: "/" },
+  icons: {
+    icon: "/mccup-favicon.png",
+    apple: "/mccup-apple-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "zh_TW",
@@ -19,11 +23,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.seoTitle,
     description: site.seoDescription,
+    images: [{ url: "/mccup-logo.png", width: 310, height: 160, alt: "McCup Challenge" }],
   },
   twitter: {
     card: "summary_large_image",
     title: site.seoTitle,
     description: site.seoDescription,
+    images: ["/mccup-logo.png"],
   },
 };
 
