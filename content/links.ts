@@ -1,5 +1,5 @@
 // 所有外部連結集中於此。小哈只需改這裡，不用碰元件。
-// 未定的表單連結一律用 TODO 常數佔位，UI 會自動顯示「即將公告」並停用按鈕。
+// 未定的連結一律用 TODO 常數佔位，UI 會自動顯示「即將公告」並停用按鈕。
 
 export const TODO = "TODO" as const;
 
@@ -9,12 +9,16 @@ export function isPending(url: string): boolean {
 }
 
 export const links = {
-  // ── 表單（全部外連 Google Forms；未定者以 TODO 佔位）──
-  signup: TODO,            // 報名表
+  // ── Google 表單（未定者以 TODO 佔位）──
+  // 報名表（2026/9/1–10/15 開放）
+  signup: "https://docs.google.com/forms/d/e/1FAIpQLScjAOh_nY4_6q8Y_TVRhmMnviw33H-p3CgJ5fyvUOgfHc7xig/viewform",
   paymentLog: TODO,        // 繳費登錄表
-  submitPrelim: TODO,      // 初賽作品繳交表
-  submitVideo: TODO,       // 複賽影片上傳表
-  pdfTemplate: TODO,       // 圖文檔 PDF 空白模板下載
+  // 作品繳交表（世界檔／黑板截圖／圖文檔／影片連結，12/13 截止）
+  submitWork: "https://docs.google.com/forms/d/e/1FAIpQLSeE-0qzIYYF9SWzdV7NBCXgIQfiHZqHW01CZBs74DnRRR_4IA/viewform",
+
+  // ── 圖文檔模板下載（放在官網 public/ 目錄）──
+  docTemplateBlank: "/templates/2026麥塊盃_圖文特點說明_空白模板.docx",
+  docTemplateExample: "/templates/2026麥塊盃_圖文特點說明_範例.docx",
 
   // ── 官方社群與單位（已確定）──
   facebook: "https://www.facebook.com/mcuptw",
@@ -25,7 +29,7 @@ export const links = {
   video2025: "https://www.youtube.com/watch?v=ptqiTmfgw-s",
 } as const;
 
-// 匯款繳費資訊（唯一事實來源＝簡章 v1）
+// 匯款繳費資訊（唯一事實來源＝簡章 v4）
 export const payment = {
   accountName: "臺灣機器人教育聯盟",
   bank: "台灣土地銀行 斗六分行",
