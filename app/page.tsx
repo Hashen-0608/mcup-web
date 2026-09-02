@@ -130,6 +130,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── 大會理念（引自 2025 頒獎典禮） ── */}
+      <section className="bg-secondary-700 py-16 text-white">
+        <div className="mx-auto max-w-4xl px-4 text-center">
+          <p className="text-sm font-bold tracking-widest text-primary-300">FROM THE ORGANISER</p>
+          <blockquote className="mt-6 text-xl font-black leading-relaxed sm:text-2xl">
+            「名次並不代表『做得好』或『不好』，<br className="hidden sm:block" />
+            它只是代表了『在現有的遊戲規則下，你們完成挑戰的一種記錄』。」
+          </blockquote>
+          <p className="mt-8 leading-relaxed text-secondary-100">
+            真正的勝負，不在於作品的美與醜，而在於解決問題的過程。
+            我們看過實地考察的隊伍、深夜還在爭論資料的隊伍——在那些爭執、修正與最終成形的過程裡，
+            孩子帶走的邏輯思維與美學素養，才是麥塊盃給他們最好的禮物。
+          </p>
+          <p className="mt-6 text-sm text-secondary-200">—— 2025 麥塊盃頒獎典禮</p>
+        </div>
+      </section>
+
       {/* ── 常見問題 ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <SectionHeading eyebrow="FAQ" title="常見問題" />
