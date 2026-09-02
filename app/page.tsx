@@ -111,7 +111,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading eyebrow="AWARDS" title="獎項" />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {[awards.elementary, awards.secondary, awards.special, awards.finish].map((a) => (
+            {[awards.ranks, awards.advance, awards.special, awards.finish].map((a) => (
               <div key={a.group} className="rounded-2xl bg-white p-6 shadow-sm">
                 <p className="mb-3 inline-block rounded-lg bg-primary-100 px-3 py-1 text-sm font-black text-primary-700">
                   {a.group}
