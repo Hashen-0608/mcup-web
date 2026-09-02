@@ -56,6 +56,44 @@ export default function HistoryPage() {
         </div>
       </div>
 
+      {/* 2025 頒獎典禮 */}
+      <div className="mt-16">
+        <h2 className="text-xl font-black text-secondary-700">2025 線上頒獎典禮</h2>
+        <p className="mt-2 leading-relaxed text-ink/70">
+          為了讓成果被更多人看見，2025 首次舉辦線上頒獎典禮。我們把所有入圍決賽的作品
+          <span className="font-bold text-secondary-700">合併成同一張世界地圖</span>——
+          當你能在一張地圖裡從「金門古叝」走到「總統府」，再走到「泰姬瑪哈陵」，
+          那份工程的浩大就都值得了。
+        </p>
+
+        <div className="mt-6 overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/works/c2025-02-worldmap.jpg"
+            alt="2025 麥塊盃：所有決賽作品合併而成的世界地圖空拍"
+            loading="lazy"
+            className="w-full"
+          />
+          <p className="bg-secondary-50/60 px-5 py-3 text-sm text-ink/70">
+            決賽作品合併地圖：羅馬競技場、總統府、金字塔、泰姬瑪哈陵、比薩斜塔、武德殿與金門古叝同框。
+          </p>
+        </div>
+
+        <div className="mt-5 grid gap-5 sm:grid-cols-3">
+          {[
+            { img: "/works/c2025-01-stage.jpg", cap: "典禮會場：彩虹拱門與獎盃主舞台" },
+            { img: "/works/c2025-03-plaza.jpg", cap: "觀禮席，正對決賽作品群" },
+            { img: "/works/c2025-04-trophy.jpg", cap: "選手在獎盃前合影" },
+          ].map((c) => (
+            <figure key={c.img} className="overflow-hidden rounded-2xl border border-gray-100 shadow-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={c.img} alt={c.cap} loading="lazy" className="h-48 w-full object-cover" />
+              <figcaption className="px-4 py-3 text-xs leading-relaxed text-ink/60">{c.cap}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+
       {/* 歷年作品展示 */}
       <div className="mt-16">
         <h2 className="text-xl font-black text-secondary-700">歷年參賽作品</h2>
