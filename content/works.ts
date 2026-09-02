@@ -20,7 +20,7 @@ export const workYears: WorkYear[] = [
     theme: "古蹟與遺跡",
     works: [
       {
-        img: "/works/w2025-01-athena-pyramid.jpg",
+        img: "/works/w2025-01-athena.jpg",
         title: "雅典娜神殿及金字塔的危機",
         team: "林小資",
         desc:
@@ -45,7 +45,7 @@ export const workYears: WorkYear[] = [
         title: "泰姬瑪哈陵的倒影",
         team: "皮蛋拿去洗",
         desc:
-          "作品的藝術深度與故事敘述非常卓越。不僅運用進階的程式取代技術達成完美對稱，更透過「白與黑、生與死、光與影」的意象，深刻詮釋泰姬瑪哈陵背後那段動人的愛情與歷史傳說。",
+          "作品的�m術深度與故事敘述非常卓越。不僅運用進階的程式取代技術達成完美對稱，更透過「白與黑、生與死、光與影」的意象，深刻詮釋泰姬瑪哈陵背後那段動人的愛情與歷史傳說。",
       },
       {
         img: "/works/w2025-05-pisa.jpg",
