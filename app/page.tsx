@@ -61,7 +61,7 @@ export default function HomePage() {
       {/* ── 重要時程 ── */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <SectionHeading eyebrow="IMPORTANT DATES" title="重要時程" />
-        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {schedule.map((s) => (
             <li
               key={s.label}
