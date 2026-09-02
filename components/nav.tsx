@@ -7,6 +7,7 @@ import { site } from "@/content/data";
 const navItems = [
   { href: "/", label: "首頁" },
   { href: "/rules", label: "簡章" },
+  { href: "/submit", label: "繳交說明" },
   { href: "/news", label: "最新消息" },
   { href: "/history", label: "歷年成果" },
 ];

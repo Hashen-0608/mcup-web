@@ -1,6 +1,6 @@
 # 2026 麥塊盃官網（mcup-web）
 
-2026 麥塊盃《Minecraft 教育版創意大賽》官方網站。主題「島嶼共生：台灣生物多樣性任務」。
+2026 麥塊盃《Minecraft 教育版創意大賽》官方網站。主題「島嶼守護者：台灣防災任務」。
 純靜態站，用 **Next.js（App Router）+ Tailwind CSS** 打造，不接後端、不用資料庫，可直接免費部署到 Vercel。
 
 ---
@@ -68,18 +68,44 @@ npm run build   # 應顯示 Compiled successfully、四個頁面都出現
 
 只要做一次設定，之後每次把程式碼推上 GitHub，Vercel 就會自動更新網站。
 
+### 步驟 1：把程式碼放上 GitHub
+
+1. 到 [github.com](https://github.com) 建一個新的 repository（例如 `mcup-web`），設為 Private 或 Public 皆可。
+2. 在這個資料夾打開終端機執行：
+
+   ```bash
+   git init
+   git add .
+   git commit -m "2026 麥塊盃官網 v1"
+   git branch -M main
+   git remote add origin https://github.com/你的帳號/mcup-web.git
+   git push -u origin main
+   ```
+
+### 步驟 2：用 Vercel 部署
+
 1. 到 [vercel.com](https://vercel.com)，用 GitHub 帳號登入。
-2. 按 **Add New… → Project**，選 `mcup-web` repository，按 **Import**。
+2. 按 **Add New… → Project**，選剛剛的 `mcup-web` repository，按 **Import**。
 3. Framework 會自動偵測為 **Next.js**，其他設定不用改，直接按 **Deploy**。
 4. 等一兩分鐘，就會拿到一個網址，例如 `https://mcup-web.vercel.app`。
 
-之後在 **Settings → Domains** 可以換成 `mcuptw.vercel.app` 之類好記的名稱（沒被用過即可）。
+### 步驟 3（可選）：換個好記的免費網域
 
-> 換網址後，記得同步更新 `content/data.ts` 裡的 `site.url`（影響 SEO 的 sitemap 與分享標籤）。
+在 Vercel 專案的 **Settings → Domains** 可以把網址改成 `mcuptw.vercel.app` 之類好記的名稱（只要沒被別人用過）。
+
+> 記得換網址後，同步更新 `content/data.ts` 裡的 `site.url`（影響 SEO 的 sitemap 與分享標籤）。
 
 ### 之後怎麼更新網站
 
-在 GitHub 網頁上直接編輯 `content/` 裡的檔案並 Commit，Vercel 會自動重新部署，通常一兩分鐘就上線。
+改完內容後：
+
+```bash
+git add .
+git commit -m "更新報名連結"
+git push
+```
+
+Vercel 偵測到 GitHub 有新版本，會自動重新部署，通常一兩分鐘就上線。
 
 ---
 
@@ -89,7 +115,7 @@ npm run build   # 應顯示 Compiled successfully、四個頁面都出現
 - 字型：Noto Sans TC（以 `<link>` 從 Google Fonts 載入）
 - SEO：每頁有獨立 title / description / OG 標籤，`lang="zh-Hant-TW"`，並內建 `sitemap.xml` 與 `robots.txt`
 - 設計：橘黃 × 科技藍 × 白，色彩集中於 `tailwind.config.ts` 的 token；手機優先 RWD
-- 主視覺：Hero 目前是漸層＋像素方塊風佔位，日後可把「島嶼共生」主視覺圖放進 `app/page.tsx` 的 Hero 圖片插槽
+- 主視覺：Hero 目前是漸層＋像素方塊風佔位，日後可把「島嶼守護者」主視覺圖放進 `app/page.tsx` 的 Hero 圖片插槽
 
 ---
 
