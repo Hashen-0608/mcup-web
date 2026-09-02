@@ -141,6 +141,11 @@ export default function SubmitPage() {
         <p className="mt-2 text-sm text-white/80">
           四項都準備齊全後，到「作品繳交表」一次上傳。繳交後仍可於截止前重新提交，以最後一次為準。
         </p>
+        <p className="mt-3 rounded-xl bg-white/10 p-4 text-sm leading-relaxed text-white/90">
+          <span className="font-bold text-primary-100">繳交表需要登入 Google 帳號。</span>{" "}
+          因為表單含檔案上傳（世界檔、截圖、PDF），Google 規定必須登入才能上傳。Gmail 或學校的
+          Google 帳號都可以，請在繳交前先準備好，別等到 12/13 當晚才發現沒有帳號。
+        </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <LinkButton href={links.submitWork} pendingLabel="繳交表即將開放">
             前往作品繳交表
