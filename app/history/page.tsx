@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "歷年成果",
-  description: `${site.name}歷年成果：2025 首屆麥塊盃回顧、決賽隊伍名單、成果影片與家長選手好評。`,
+  description: `${site.name}歷年成果：2025 首屆麥塊盃回顧、決賽隊伍名單、成果影片與選手心得。`,
   alternates: { canonical: "/history" },
 };
 
@@ -62,7 +62,7 @@ export default function HistoryPage() {
         <p className="mt-2 leading-relaxed text-ink/70">
           為了讓成果被更多人看見，2025 首次舉辦線上頒獎典禮。我們把所有入圍決賽的作品
           <span className="font-bold text-secondary-700">合併成同一張世界地圖</span>——
-          當你能在一張地圖裡從「金門古叝」走到「總統府」，再走到「泰姬瑪哈陵」，
+          當你能在一張地圖裡從「金門古厝」走到「總統府」，再走到「泰姬瑪哈陵」，
           那份工程的浩大就都值得了。
         </p>
 
@@ -75,7 +75,7 @@ export default function HistoryPage() {
             className="w-full"
           />
           <p className="bg-secondary-50/60 px-5 py-3 text-sm text-ink/70">
-            決賽作品合併地圖：羅馬競技場、總統府、金字塔、泰姬瑪哈陵、比薩斜塔、武德殿與金門古叝同框。
+            決賽作品合併地圖：羅馬競技場、總統府、金字塔、泰姬瑪哈陵、比薩斜塔、武德殿與金門古厝同框。
           </p>
         </div>
 
@@ -173,7 +173,7 @@ export default function HistoryPage() {
 
       {/* 好評 */}
       <div className="mt-12">
-        <h2 className="mb-4 text-xl font-black text-secondary-700">家長與選手好評</h2>
+        <h2 className="mb-4 text-xl font-black text-secondary-700">選手心得</h2>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <figure key={i} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
