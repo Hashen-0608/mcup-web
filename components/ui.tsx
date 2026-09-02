@@ -25,12 +25,14 @@ export function SectionHeading({
   );
 }
 
-type ButtonVariant = "primary" | "secondary" | "outline";
+type ButtonVariant = "primary" | "secondary" | "outline" | "mc";
 
 const variantClass: Record<ButtonVariant, string> = {
   primary: "bg-primary-500 text-white hover:bg-primary-600",
   secondary: "bg-secondary-500 text-white hover:bg-secondary-600",
   outline: "border-2 border-secondary-500 text-secondary-600 hover:bg-secondary-50",
+  // 麥塊木頭按鈕（Hero 專用，樣式定義在 globals.css）
+  mc: "mc-btn mc-btn--fill",
 };
 
 /**
@@ -53,15 +55,17 @@ export function LinkButton({
   /** 傳入檔名即為下載連結；使用者存檔時會看到這個名字 */
   download?: string;
 }) {
-  const base =
+  // mc 變體的尺寸與外框都在 .mc-btn 裡，這裡不要再疊圓角與陰影
+  const defaultBase =
     "inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-bold shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2";
+  const base = variant === "mc" ? "focus:outline-none" : defaultBase;
 
   if (isPending(href)) {
     return (
       <span
         aria-disabled="true"
         title="連結即將公告"
-        className={`${base} cursor-not-allowed bg-gray-200 text-gray-500 shadow-none ${className}`}
+        className={`${defaultBase} cursor-not-allowed bg-gray-200 text-gray-500 shadow-none ${className}`}
       >
         {pendingLabel ?? "即將公告"}
       </span>
