@@ -88,6 +88,14 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/mccup-logo.png"
+              alt="McCup Challenge"
+              width={310}
+              height={160}
+              className="mb-4 h-12 w-auto"
+            />
             <p className="text-xl font-black">{site.name}</p>
             <p className="mt-3 text-sm leading-relaxed text-secondary-100">
               {site.theme}
