@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { rules, rulesIntro, type RuleBlock } from "@/content/rules";
 import { site } from "@/content/data";
-import { SectionHeading } from "@/components/ui";
+import { links, rulesVersion } from "@/content/links";
+import { SectionHeading, LinkButton } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "簡章",
@@ -61,6 +62,20 @@ export default function RulesPage() {
     <div className="mx-auto max-w-4xl px-4 py-16">
       <SectionHeading eyebrow="GUIDELINES" title="2026 麥塊盃簡章" center={false} />
       <p className="mt-4 leading-relaxed text-ink/70">{rulesIntro}</p>
+
+      {/* 簡章 PDF 下載 */}
+      <div className="mt-8 flex flex-wrap items-center gap-4 rounded-2xl border border-primary-100 bg-primary-50 p-6">
+        <div className="mr-auto">
+          <p className="font-black text-secondary-700">下載完整簡章（PDF）</p>
+          <p className="mt-1 text-sm text-ink/70">
+            目前版本 <span className="font-bold text-primary-600">{rulesVersion.label}</span>
+            （{rulesVersion.date} 定稿）。簡章如有更新會換版本號，請以官網最新版為準。
+          </p>
+        </div>
+        <LinkButton href={links.rulesPdf} download={rulesVersion.downloadName} pendingLabel="PDF 即將提供">
+          下載簡章 PDF
+        </LinkButton>
+      </div>
 
       {/* 錨點目錄 */}
       <nav aria-label="簡章目錄" className="mt-8 rounded-2xl border border-gray-100 bg-secondary-50/50 p-6">
