@@ -92,11 +92,28 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {themeIntro.prompts.map((p, i) => (
-              <div key={i} className="rounded-2xl bg-white p-6 shadow-sm">
-                <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary-100 font-black text-primary-600">
-                  {i + 1}
-                </span>
-                <p className="mt-4 leading-relaxed text-ink/80">{p}</p>
+              <div
+                key={i}
+                className="group rounded-2xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-secondary-50">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.icon}
+                      alt=""
+                      aria-hidden="true"
+                      width={48}
+                      height={48}
+                      className="h-9 w-9 transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary-100 text-sm font-black text-primary-600">
+                    {i + 1}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-black text-secondary-700">{p.title}</h3>
+                <p className="mt-2 leading-relaxed text-ink/80">{p.text}</p>
               </div>
             ))}
           </div>
