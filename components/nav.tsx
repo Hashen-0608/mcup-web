@@ -18,11 +18,18 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/90 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-primary-500 font-black text-white">
-            M
+        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/mccup-logo.png"
+            alt="McCup Challenge"
+            width={310}
+            height={160}
+            className="h-9 w-auto sm:h-10"
+          />
+          <span className="hidden text-lg font-black text-secondary-700 sm:inline">
+            {site.name}
           </span>
-          <span className="text-lg font-black text-secondary-700">{site.name}</span>
         </Link>
 
         {/* 桌機導覽 */}
