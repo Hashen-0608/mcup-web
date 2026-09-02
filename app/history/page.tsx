@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { history2025, site } from "@/content/data";
 import { links } from "@/content/links";
+import { workYears } from "@/content/works";
 import { SectionHeading } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -53,6 +54,55 @@ export default function HistoryPage() {
             allowFullScreen
           />
         </div>
+      </div>
+
+      {/* 歷年作品展示 */}
+      <div className="mt-16">
+        <h2 className="text-xl font-black text-secondary-700">歷年參賽作品</h2>
+        <p className="mt-2 leading-relaxed text-ink/70">
+          這些都是孩子親手在 Minecraft 教育版裡蓋出來的。從還原一棟古蹟的屋頂細節，到用程式做出完美對稱的建築、
+          用指令方塊設計一段互動導覽——他們花的功夫，遠比一張照片看起來的多。
+        </p>
+
+        {workYears.map((y) => (
+          <section key={y.year} className="mt-10">
+            <div className="mb-5 flex flex-wrap items-baseline gap-3">
+              <span className="rounded-lg bg-primary-500 px-3 py-1 text-sm font-black text-white">{y.year}</span>
+              <span className="font-bold text-secondary-700">主題：{y.theme}</span>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {y.works.map((w) => (
+                <figure
+                  key={w.img}
+                  className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-shadow hover:shadow-md"
+                >
+                  <div className="overflow-hidden bg-gray-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={w.img}
+                      alt={`${y.year} 麥塊盃參賽作品：${w.title}`}
+                      loading="lazy"
+                      className="w-full transition-transform duration-300 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <figcaption className="p-5">
+                    <div className="flex flex-wrap items-baseline gap-2">
+                      <h3 className="font-black text-secondary-700">{w.title}</h3>
+                      <span className="rounded-md bg-secondary-50 px-2 py-0.5 text-xs font-bold text-secondary-600">
+                        {w.team}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-ink/70">{w.desc}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <p className="mt-6 text-xs text-ink/50">
+          ＊以上皆為歷屆選手之參賽作品，經授權公開展示；依大會隱私原則僅標示隊名，不列出選手姓名。
+        </p>
       </div>
 
       {/* 決賽隊伍名單 */}
