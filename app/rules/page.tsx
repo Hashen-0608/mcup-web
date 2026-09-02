@@ -30,11 +30,14 @@ function Block({ block }: { block: RuleBlock }) {
     case "table":
       return (
         <div className="overflow-x-auto">
-          <table className="w-full border-collapse text-sm">
+          <table className="w-full min-w-[34rem] border-collapse text-sm">
             <thead>
               <tr className="bg-secondary-50 text-secondary-700">
-                {block.head.map((h) => (
-                  <th key={h} className="border border-gray-200 px-3 py-2 text-left font-bold">
+                {block.head.map((h, hi) => (
+                  <th
+                    key={h}
+                    className={`border border-gray-200 px-3 py-2 text-left font-bold ${hi === 0 ? "whitespace-nowrap" : ""}`}
+                  >
                     {h}
                   </th>
                 ))}
@@ -44,7 +47,10 @@ function Block({ block }: { block: RuleBlock }) {
               {block.rows.map((row, ri) => (
                 <tr key={ri} className="odd:bg-white even:bg-gray-50/60">
                   {row.map((cell, ci) => (
-                    <td key={ci} className="border border-gray-200 px-3 py-2 align-top text-ink/80">
+                    <td
+                      key={ci}
+                      className={`border border-gray-200 px-3 py-2 align-top text-ink/80 ${ci === 0 ? "whitespace-nowrap" : ""}`}
+                    >
                       {cell}
                     </td>
                   ))}
