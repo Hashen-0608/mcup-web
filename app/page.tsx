@@ -13,33 +13,49 @@ import { Faq } from "@/components/faq";
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero：島嶼守護者主視覺（漸層＋像素方塊風佔位，日後換圖）── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-secondary-700 via-secondary-600 to-primary-600 text-white">
-        <div className="pixel-grid absolute inset-0 opacity-40" aria-hidden />
-        {/* 主視覺圖片插槽：日後將島嶼守護者主視覺放入此區 */}
+      {/* ── Hero：島嶼共生意象影片
+           影片：public/hero-loop.mp4（17 秒無縫來回循環、無音軌、1.9MB）
+           靜幀：public/hero-poster.jpg（載入前與 prefers-reduced-motion 時顯示）
+           section 加 isolate 建立堆疊脈絡，負 z-index 的影片才不會掉到背景色底下 ── */}
+      <section className="relative isolate overflow-hidden bg-secondary-700 text-white">
+        <video
+          className="absolute inset-0 -z-20 h-full w-full object-cover motion-reduce:hidden"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/hero-poster.jpg"
+          aria-hidden
+        >
+          <source src="/hero-loop.mp4" type="video/mp4" />
+        </video>
+        {/* 使用者關閉動態效果時，改看同一支影片的第一幀 */}
+        <div className="hero-still absolute inset-0 -z-20 hidden motion-reduce:block" aria-hidden />
+        <div className="hero-scrim absolute inset-0 -z-10" aria-hidden />
+        <div className="pixel-grid absolute inset-0 -z-10 opacity-50" aria-hidden />
+
         <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
-          <p className="inline-block rounded-full bg-white/15 px-4 py-1 text-sm font-bold backdrop-blur">
+          <p className="inline-block bg-white/15 px-4 py-1 text-sm font-bold backdrop-blur">
             2026 麥塊盃 · Minecraft 教育版創意大賽
           </p>
-          <h1 className="mt-6 max-w-3xl text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
+          <h1 className="hero-shadow mt-6 max-w-3xl text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
             島嶼共生
             <span className="mt-2 block text-primary-100">台灣生物多樣性任務</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
+          <p className="hero-shadow mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
             {site.oneLiner}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <LinkButton href={links.signup} pendingLabel="報名即將開放">
+            <LinkButton href={links.signup} variant="mc" pendingLabel="報名即將開放">
               我要報名
             </LinkButton>
-            <Link
-              href="/rules"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-white/70 px-6 py-3 text-base font-bold text-white transition-colors hover:bg-white/10"
-            >
+            <Link href="/rules" className="mc-btn mc-btn--ghost">
               閱讀簡章
             </Link>
           </div>
         </div>
+        <div className="hero-fade pointer-events-none absolute inset-x-0 bottom-0 h-20" aria-hidden />
       </section>
 
       {/* ── 重要時程 ── */}
@@ -76,28 +92,11 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {themeIntro.prompts.map((p, i) => (
-              <div
-                key={i}
-                className="group rounded-2xl bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-secondary-50">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={p.icon}
-                      alt=""
-                      aria-hidden="true"
-                      width={48}
-                      height={48}
-                      className="h-9 w-9 transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-primary-100 text-sm font-black text-primary-600">
-                    {i + 1}
-                  </span>
-                </div>
-                <h3 className="mt-4 font-black text-secondary-700">{p.title}</h3>
-                <p className="mt-2 leading-relaxed text-ink/80">{p.text}</p>
+              <div key={i} className="rounded-2xl bg-white p-6 shadow-sm">
+                <span className="grid h-10 w-10 place-items-center rounded-lg bg-primary-100 font-black text-primary-600">
+                  {i + 1}
+                </span>
+                <p className="mt-4 leading-relaxed text-ink/80">{p}</p>
               </div>
             ))}
           </div>
@@ -144,23 +143,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── 大會理念（引自 2025 頒獎典禮） ── */}
-      <section className="bg-secondary-700 py-16 text-white">
-        <div className="mx-auto max-w-4xl px-4 text-center">
-          <p className="text-sm font-bold tracking-widest text-primary-300">FROM THE ORGANISER</p>
-          <blockquote className="mt-6 text-xl font-black leading-relaxed sm:text-2xl">
-            「名次並不代表『做得好』或『不好』，<br className="hidden sm:block" />
-            它只是代表了『在現有的遊戲規則下，你們完成挑戰的一種記錄』。」
-          </blockquote>
-          <p className="mt-8 leading-relaxed text-secondary-100">
-            真正的勝負，不在於作品的美與醜，而在於解決問題的過程。
-            我們看過實地考察的隊伍、深夜還在爭論資料的隊伍——在那些爭執、修正與最終成形的過程裡，
-            孩子帶走的邏輯思維與美學素養，才是麥塊盃給他們最好的禮物。
-          </p>
-          <p className="mt-6 text-sm text-secondary-200">—— 2025 麥塊盃頒獎典禮</p>
         </div>
       </section>
 

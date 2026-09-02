@@ -24,3 +24,105 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 32px 32px;
 }
+
+/* ── Hero 意象影片：遮罩、靜幀替身、文字陰影 ───────────────────────── */
+
+/* 左濃右淡的深藍遮罩，讓文字壓在影片上仍可讀（色值＝secondary-700 不同透明度） */
+.hero-scrim {
+  background-image: linear-gradient(
+    96deg,
+    rgba(18, 58, 97, 0.94) 0%,
+    rgba(18, 58, 97, 0.8) 34%,
+    rgba(18, 58, 97, 0.34) 60%,
+    rgba(18, 58, 97, 0.06) 100%
+  );
+}
+
+/* 手機是直式畫面，左濃右淡撐不住——改成由上而下壓，副標才不會壓在亮處 */
+@media (max-width: 640px) {
+  .hero-scrim {
+    background-image: linear-gradient(
+      170deg,
+      rgba(18, 58, 97, 0.92) 0%,
+      rgba(18, 58, 97, 0.86) 55%,
+      rgba(18, 58, 97, 0.62) 100%
+    );
+  }
+}
+
+/* 影片下緣淡出到白底，接住下一個區塊 */
+.hero-fade {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+}
+
+/* prefers-reduced-motion 時取代影片的靜幀 */
+.hero-still {
+  background-image: url("/hero-poster.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-shadow {
+  text-shadow: 0 2px 18px rgba(9, 26, 45, 0.55);
+}
+
+/* ── 麥塊木頭按鈕：厚邊、內斜角、按下去會沉 ─────────────────────────── */
+.mc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8125rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.35);
+  border-radius: 0;
+  transition: transform 0.07s linear, box-shadow 0.07s linear;
+}
+
+.mc-btn--fill {
+  background-color: theme("colors.primary.500");
+  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.34),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.22), 0 5px 0 theme("colors.primary.700");
+}
+.mc-btn--fill:hover {
+  transform: translateY(2px);
+  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.34),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.22), 0 3px 0 theme("colors.primary.700");
+}
+.mc-btn--fill:active {
+  transform: translateY(5px);
+  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.24),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.3), 0 0 0 theme("colors.primary.700");
+}
+
+.mc-btn--ghost {
+  background-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.18),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.12), 0 5px 0 rgba(0, 0, 0, 0.28);
+}
+.mc-btn--ghost:hover {
+  transform: translateY(2px);
+  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.18),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.12), 0 3px 0 rgba(0, 0, 0, 0.28);
+}
+.mc-btn--ghost:active {
+  transform: translateY(5px);
+  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.12),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(0, 0, 0, 0.28);
+}
+
+.mc-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mc-btn,
+  .mc-btn:hover,
+  .mc-btn:active {
+    transition: none;
+    transform: none;
+  }
+}
