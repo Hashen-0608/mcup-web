@@ -179,14 +179,14 @@ export default function HomePage() {
             <div className="rounded-2xl bg-white/10 p-6 backdrop-blur">
               <p className="text-lg font-black">線上表單</p>
               <p className="mt-2 text-sm text-white/80">
-                報名表、繳費登錄表等連結將於此陸續公告。連結一經確定，按鈕即會開放點擊。
+                報名表與作品繳交表都已開放。作品繳交表含檔案上傳，須以 Google 帳號登入，請提前準備。
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <LinkButton href={links.signup} pendingLabel="報名即將開放">
                   報名表
                 </LinkButton>
-                <LinkButton href={links.paymentLog} variant="secondary" pendingLabel="即將公告">
-                  繳費登錄
+                <LinkButton href={links.submitWork} variant="secondary" pendingLabel="繳交表即將開放">
+                  作品繳交表
                 </LinkButton>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function HomePage() {
                 </div>
               </dl>
               <p className="mt-4 text-xs text-white/70">
-                繳費後請依官網指示登錄繳費資料，以利對帳。
+                匯款時請在備註欄填上隊伍編號，並回覆報名確認信告知匯款日期與帳號末五碼，以利對帳。
               </p>
             </div>
           </div>

@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.seoTitle,
     description: site.seoDescription,
-    images: [{ url: "/mccup-logo.png", width: 310, height: 160, alt: "McCup Challenge" }],
+    images: [{ url: "/key-visual.jpg", width: 1280, height: 720, alt: `${site.name}：${site.theme}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: site.seoTitle,
     description: site.seoDescription,
-    images: ["/mccup-logo.png"],
+    images: ["/key-visual.jpg"],
   },
 };
 
