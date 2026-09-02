@@ -16,6 +16,9 @@ export const links = {
   // 作品繳交表（世界檔／黑板截圖／圖文檔／影片連結，12/13 截止）
   submitWork: "https://docs.google.com/forms/d/e/1FAIpQLSeE-0qzIYYF9SWzdV7NBCXgIQfiHZqHW01CZBs74DnRRR_4IA/viewform",
 
+  // ── 簡章 PDF（檔名帶版本日期；每次改版換新檔名並更新這裡）──
+  rulesPdf: "/downloads/mcup2026-rules-20260902.pdf",
+
   // ── 圖文檔模板下載（放在官網 public/ 目錄）──
   // 註：中文檔名從 Windows 拖曳上傳時會被截成 8.3 短檔名，故改用 ASCII 檔名
   docTemplateBlank: "/templates/mcup2026-template-blank.docx",
@@ -28,6 +31,14 @@ export const links = {
 
   // ── 影音 ──
   video2025: "https://www.youtube.com/watch?v=ptqiTmfgw-s",
+} as const;
+
+// 簡章版本資訊（供官網顯示與 PDF 下載檔名使用）
+export const rulesVersion = {
+  label: "v4",
+  date: "2026-09-02",
+  /** 使用者下載後看到的檔名 */
+  downloadName: "2026麥塊盃簡章_v4_20260902.pdf",
 } as const;
 
 // 匯款繳費資訊（唯一事實來源＝簡章 v4）
