@@ -90,7 +90,7 @@ export default function HomePage() {
             <p>{themeIntro.lead}</p>
             <p className="mt-4 font-bold text-secondary-700">{themeIntro.body}</p>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {themeIntro.prompts.map((p, i) => (
               <div
                 key={i}
@@ -117,7 +117,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-ink/60">
+          <p className="mx-auto mt-8 max-w-3xl rounded-xl bg-secondary-50 px-6 py-4 text-center text-sm leading-relaxed text-ink/70">
             {themeIntro.extend}
           </p>
         </div>
