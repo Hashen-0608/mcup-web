@@ -17,7 +17,7 @@ export const links = {
   submitWork: "https://docs.google.com/forms/d/e/1FAIpQLSeE-0qzIYYF9SWzdV7NBCXgIQfiHZqHW01CZBs74DnRRR_4IA/viewform",
 
   // ── 簡章 PDF（檔名帶版本日期；每次改版換新檔名並更新這裡）──
-  rulesPdf: "/downloads/rules-20260903.pdf",
+  rulesPdf: "/downloads/rules-20260903-v6.pdf",
 
   // ── 圖文檔模板下載（放在官網 public/ 目錄）──
   // 註：中文檔名從 Windows 拖曳上傳時會被截成 8.3 短檔名，故改用 ASCII 檔名
@@ -35,10 +35,10 @@ export const links = {
 
 // 簡章版本資訊（供官網顯示與 PDF 下載檔名使用）
 export const rulesVersion = {
-  label: "v5",
+  label: "v6",
   date: "2026-09-03",
   /** 使用者下載後看到的檔名 */
-  downloadName: "2026麥塊盃簡章_v5_20260903.pdf",
+  downloadName: "2026麥塊盃簡章_v6_20260903.pdf",
 } as const;
 
 // 匯款繳費資訊（唯一事實來源＝簡章 v4）
