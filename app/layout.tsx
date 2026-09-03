@@ -23,13 +23,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.seoTitle,
     description: site.seoDescription,
-    images: [{ url: "/key-visual.jpg", width: 1280, height: 720, alt: `${site.name}：${site.theme}` }],
+    // 主視覺 key-visual.jpg 印著舊主題，暫改用影片靜幀（純生態場景、無文字）
+  images: [{ url: "/hero-poster.jpg", width: 1280, height: 720, alt: `${site.name}：${site.theme}` }],
   },
   twitter: {
     card: "summary_large_image",
     title: site.seoTitle,
     description: site.seoDescription,
-    images: ["/key-visual.jpg"],
+    images: ["/hero-poster.jpg"],
   },
 };
 

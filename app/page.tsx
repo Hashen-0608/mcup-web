@@ -13,7 +13,7 @@ import { Faq } from "@/components/faq";
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero：島嶼共生意象影片
+      {/* ── Hero：萬物共生意象影片
            影片：public/hero-loop.mp4（17 秒無縫來回循環、無音軌、1.9MB）
            靜幀：public/hero-poster.jpg（載入前與 prefers-reduced-motion 時顯示）
            section 加 isolate 建立堆疊脈絡，負 z-index 的影片才不會掉到背景色底下 ── */}
@@ -40,8 +40,8 @@ export default function HomePage() {
             2026 麥塊盃 · Minecraft 教育版創意大賽
           </p>
           <h1 className="hero-shadow mt-6 max-w-3xl text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
-            島嶼共生
-            <span className="mt-2 block text-primary-100">台灣生物多樣性任務</span>
+            萬物共生
+            <span className="mt-2 block text-primary-100">動態平衡與生態調控</span>
           </h1>
           <p className="hero-shadow mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
             {site.oneLiner}
