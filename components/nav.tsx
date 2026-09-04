@@ -7,6 +7,7 @@ import { site } from "@/content/data";
 const navItems = [
   { href: "/", label: "首頁" },
   { href: "/rules", label: "簡章" },
+  { href: "/rules#payment", label: "繳費" },
   { href: "/submit", label: "繳交說明" },
   { href: "/news", label: "最新消息" },
   { href: "/history", label: "歷年成果" },
@@ -33,7 +34,7 @@ export function Nav() {
         </Link>
 
         {/* 桌機導覽 */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-5 md:flex lg:gap-7">
           {navItems.map((item) => (
             <li key={item.href}>
               <Link
