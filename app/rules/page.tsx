@@ -27,6 +27,17 @@ function Block({ block }: { block: RuleBlock }) {
           ))}
         </ul>
       );
+    case "link":
+      return (
+        <div className="mt-4 rounded-2xl bg-primary-50 p-5">
+          {block.note ? (
+            <p className="mb-4 text-sm leading-relaxed text-ink/70">{block.note}</p>
+          ) : null}
+          <LinkButton href={block.href} pendingLabel="即將開放">
+            {block.label}
+          </LinkButton>
+        </div>
+      );
     case "table":
       return (
         <div className="overflow-x-auto">
