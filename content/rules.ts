@@ -1,10 +1,12 @@
-// 簡章 v4 全文（結構化，供 /rules 全文排版與錨點目錄使用）。唯一事實來源。
+// 簡章全文（結構化，供 /rules 全文排版與錨點目錄使用）。唯一事實來源。
+import { links } from "./links";
 
 export type RuleBlock =
   | { kind: "p"; text: string }
   | { kind: "h"; text: string }
   | { kind: "ul"; items: string[] }
-  | { kind: "table"; head: string[]; rows: string[][] };
+  | { kind: "table"; head: string[]; rows: string[][] }
+  | { kind: "link"; href: string; label: string; note?: string };
 
 export type RuleSection = {
   id: string;
@@ -332,7 +334,16 @@ export const rules: RuleSection[] = [
           "帳號：027001293902",
         ],
       },
-      { kind: "p", text: "匯款時請在備註欄填上隊伍編號，並回覆報名確認信告知匯款日期與帳號末五碼，以利對帳。" },
+      {
+        kind: "p",
+        text: "匯款時請在備註欄填上隊伍編號。匯款完成後，請填寫一次「匯款完成單」，大會即可與銀行明細對帳；一次為多支隊伍合併匯款，也只要填一張。",
+      },
+      {
+        kind: "link",
+        href: links.paymentLog,
+        label: "填寫匯款完成單",
+        note: "需填：隊伍編號、匯款日期、金額、轉出帳號末五碼、匯款人姓名。建議一併上傳匯款證明截圖，對帳最快。",
+      },
     ],
   },
   {
@@ -344,7 +355,7 @@ export const rules: RuleSection[] = [
         items: [
           "報名表：已開放，請至官網首頁「我要報名」填寫",
           "作品繳交表（含影片連結）：已開放，請至官網「繳交說明」頁填寫。表單含檔案上傳，須以 Google 帳號登入",
-          "繳費對帳：不另設繳費登錄表；匯款後請直接回覆報名確認信，告知匯款日期與帳號末五碼",
+          "匯款完成單：匯款後請填寫一次，供大會與銀行明細對帳；連結在本頁「匯款繳費資訊」與報名確認信",
           "圖文檔模板下載：請至官網「繳交說明」頁下載",
         ],
       },

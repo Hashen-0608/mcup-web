@@ -12,7 +12,8 @@ export const links = {
   // ── Google 表單（未定者以 TODO 佔位）──
   // 報名表（2026/9/1–10/15 開放）
   signup: "https://docs.google.com/forms/d/e/1FAIpQLScjAOh_nY4_6q8Y_TVRhmMnviw33H-p3CgJ5fyvUOgfHc7xig/viewform",
-  paymentLog: TODO,        // 繳費登錄表
+  // 匯款完成單（匯款後填寫，供大會與銀行明細對帳）
+  paymentLog: "https://docs.google.com/forms/d/e/1FAIpQLScyH7EhahIEhJ0_onOYykvbJgXY9QHkfqDEjrpPeP1QRGE3Eg/viewform",
   // 作品繳交表（世界檔／黑板截圖／圖文檔／影片連結，12/13 截止）
   submitWork: "https://docs.google.com/forms/d/e/1FAIpQLSeE-0qzIYYF9SWzdV7NBCXgIQfiHZqHW01CZBs74DnRRR_4IA/viewform",
 
