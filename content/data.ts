@@ -16,7 +16,9 @@ export const site = {
 } as const;
 
 export const organizers = {
-  guidance: ["台灣微軟股份有限公司"],
+  // 指導單位：原為台灣微軟股份有限公司，2026-09-09 下架。
+  // 日後有新的指導單位，把名稱填回這個陣列即可，頁尾與簡章會自動出現。
+  guidance: [] as readonly string[],
   host: ["臺灣機器人教育聯盟", "Coin 麥塊教育團隊"],
   coHost: [
     "夢想機器人教室",
@@ -100,7 +102,7 @@ export const awards = {
       "優勝：獎狀＋獎品",
       "績優：獎狀",
       "佳作：獎狀（兼作完賽證明）",
-      "國小組、國高中組各自獨立排名；得獎者另頒發微軟獎狀與獎品。",
+      "國小組、國高中組各自獨立排名。",
     ],
   },
   advance: {
