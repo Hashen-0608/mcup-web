@@ -207,8 +207,13 @@ export default function HomePage() {
                 </div>
               </dl>
               <p className="mt-4 text-xs text-white/70">
-                匯款時請在備註欄填上隊伍編號，並回覆報名確認信告知匯款日期與帳號末五碼，以利對帳。
+                匯款時請在備註欄填上隊伍編號。匯款完成後，請填寫一次「匯款完成單」，大會才能與銀行明細對帳；一次為多支隊伍合併匯款，也只要填一張。
               </p>
+              <div className="mt-4">
+                <LinkButton href={links.paymentLog} variant="secondary" pendingLabel="即將開放">
+                  填寫匯款完成單
+                </LinkButton>
+              </div>
             </div>
           </div>
         </div>
