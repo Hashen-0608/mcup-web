@@ -142,8 +142,12 @@ export function Footer() {
           <div>
             <p className="mb-3 font-bold">主辦與協辦單位</p>
             <p className="text-xs leading-relaxed text-secondary-100">
-              指導：{organizers.guidance.join("、")}
-              <br />
+              {organizers.guidance.length > 0 ? (
+                <>
+                  指導：{organizers.guidance.join("、")}
+                  <br />
+                </>
+              ) : null}
               主辦：{organizers.host.join("、")}
               <br />
               協辦：{organizers.coHost.join("、")}
