@@ -21,9 +21,13 @@ export const organizers = {
   guidance: [] as readonly string[],
   host: ["臺灣機器人教育聯盟", "Coin 麥塊教育團隊"],
   coHost: [
+    "必買夢想站",
     "夢想機器人教室",
     "小哈機器人",
-    "必買夢想站",
+    "小孩聯盟",
+    "HELLO MAKER 自遊玩",
+    "CSK樂高機器人",
+    "邁課積塊科技股份有限公司",
   ],
 } as const;
 
