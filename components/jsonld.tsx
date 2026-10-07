@@ -25,8 +25,9 @@ export function SiteJsonLd() {
       data={{
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: site.fullName,
-        alternateName: site.alternateNames,
+        // Google 搜尋結果上方顯示的「網站名稱」取自這裡，越短越好
+        name: "麥塊盃",
+        alternateName: [site.fullName, ...site.alternateNames.filter((n) => n !== "麥塊盃")],
         url: site.url,
         inLanguage: site.locale,
         publisher: hostOrgs[0],
