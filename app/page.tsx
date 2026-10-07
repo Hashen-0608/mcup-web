@@ -9,10 +9,12 @@ import {
 import { links, payment } from "@/content/links";
 import { SectionHeading, LinkButton } from "@/components/ui";
 import { Faq } from "@/components/faq";
+import { HomeJsonLd } from "@/components/jsonld";
 
 export default function HomePage() {
   return (
     <>
+      <HomeJsonLd />
       {/* ── Hero：萬物共生意象影片
            影片：public/hero-loop.mp4（17 秒無縫來回循環、無音軌、1.9MB）
            靜幀：public/hero-poster.jpg（載入前與 prefers-reduced-motion 時顯示）
