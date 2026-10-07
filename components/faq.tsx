@@ -29,9 +29,10 @@ export function Faq() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
               </svg>
             </button>
-            {isOpen && (
-              <div className="px-5 pb-5 text-sm leading-relaxed text-ink/80">{item.a}</div>
-            )}
+            {/* 答案一律輸出在 HTML 裡（收合時只是隱藏），讓搜尋引擎與 AI 助理讀得到每一題 */}
+            <div hidden={!isOpen} className="px-5 pb-5 text-sm leading-relaxed text-ink/80">
+              {item.a}
+            </div>
           </div>
         );
       })}
