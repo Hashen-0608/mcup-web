@@ -6,6 +6,7 @@ import { SiteJsonLd } from "@/components/jsonld";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  applicationName: "麥塊盃",
   title: {
     default: site.seoTitle,
     template: `%s｜${site.name}`,
@@ -13,15 +14,13 @@ export const metadata: Metadata = {
   description: site.seoDescription,
   keywords: ["麥塊盃", "Minecraft 教育版", "運算思維", "創意大賽", "程式教育", "生物多樣性", "台灣"],
   alternates: { canonical: "/" },
-  icons: {
-    icon: "/mccup-favicon.png",
-    apple: "/mccup-apple-icon.png",
-  },
+  // 網站圖示改用 app/favicon.ico、app/icon.png（192×192）、app/apple-icon.png，由 Next.js 自動輸出。
+  // Google 搜尋結果的小圖示要求正方形、48 的倍數，舊的 64×64 不符合。
   openGraph: {
     type: "website",
     locale: "zh_TW",
     url: site.url,
-    siteName: site.name,
+    siteName: "麥塊盃",
     title: site.seoTitle,
     description: site.seoDescription,
     // 主視覺 key-visual.jpg 印著舊主題，暫改用影片靜幀（純生態場景、無文字）
